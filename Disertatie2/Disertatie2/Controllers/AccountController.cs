@@ -80,8 +80,8 @@ namespace Disertatie2.Controllers
                 try
                 {
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                    WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+                    //WebSecurity.Login(model.UserName, model.Password);
+                    return RedirectToAction("Manage", "Account");
                 }
                 catch (MembershipCreateUserException e)
                 {
