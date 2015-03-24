@@ -1,0 +1,85 @@
+﻿@model Disertatie3.Models.Incasari
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Incasari</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Incasat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Incasat)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DeLa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DeLa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Data)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Data)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FacturaInc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FacturaInc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DocumentInc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DocumentInc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ValoareInc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValoareInc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Scadenta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Scadenta)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Scontare)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Scontare)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Girat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Girat)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserProfile.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserProfile.UserName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

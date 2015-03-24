@@ -1,0 +1,36 @@
+﻿@model Disertatie3.Models.StocProduse
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>StocProduse</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Data)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Data)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProdusId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProdusId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cantitate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cantitate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

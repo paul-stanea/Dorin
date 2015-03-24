@@ -7,6 +7,8 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.ComponentModel.DataAnnotations;
+using CompareAttribute = System.Web.Mvc.CompareAttribute;
 
 namespace Disertatie2.Models
 {

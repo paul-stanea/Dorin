@@ -1,0 +1,64 @@
+﻿@model Disertatie3.Models.Plati
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Plati</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Plata)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Plata)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Catre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Catre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DocumentPlata)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DocumentPlata)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Factura)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Factura)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Valoare)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Valoare)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Data)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Data)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserProfile.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserProfile.UserName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
