@@ -79,6 +79,9 @@ namespace Disertatie3.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        [Display(Name = "Sters")]
+        public string IsDeleted { get; set; }
     }
 
     public class RegisterModel
@@ -108,6 +111,13 @@ namespace Disertatie3.Models
 
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Display(Name = "Sters")]
+        public string IsDeleted { get; set; }
+
+        //[Required]
+        [Display(Name = "Role")]
+        public string Role { get; set; }
 
     }
 

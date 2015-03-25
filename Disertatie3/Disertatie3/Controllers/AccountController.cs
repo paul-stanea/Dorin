@@ -60,7 +60,7 @@ namespace Disertatie3.Controllers
         //
         // GET: /Account/Register
 
-        [AllowAnonymous]
+        [Authorize(Roles = "admin")]
         public ActionResult Register()
         {
             return View();
@@ -70,7 +70,7 @@ namespace Disertatie3.Controllers
         // POST: /Account/Register
 
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize(Roles = "admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
         {
@@ -79,13 +79,19 @@ namespace Disertatie3.Controllers
                 // Attempt to register the user
                 try
                 {
+                    
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password, 
                         new { FirstName = model.FirstName,
                             LastName = model.LastName, 
-                            Email = model.Email },
+                            Email = model.Email,  IsDeleted = 0  },
                         false);
-                    WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+                    Roles.AddUserToRoles(model.UserName, new[] { model.Role });
+
+                    
+                    return RedirectToAction("Index","UserProfile");
+
+                    //WebSecurity.Login(model.UserName, model.Password);            
+                    //return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)
                 {
@@ -95,6 +101,21 @@ namespace Disertatie3.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        public ActionResult SelectCategory()
+        {
+
+            List<SelectListItem> items = new List<SelectListItem>();
+
+            items.Add(new SelectListItem { Text = "Admin", Value = "1" });
+
+            items.Add(new SelectListItem { Text = "User", Value = "2", Selected = true });
+
+            ViewBag.UserType = items;
+
+            return View();
+
         }
 
         //

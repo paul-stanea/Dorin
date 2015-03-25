@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Disertatie3.Models;
+using System.Web.Security;
+using WebMatrix.WebData;
 
 namespace Disertatie3.Controllers
 {
@@ -102,12 +104,30 @@ namespace Disertatie3.Controllers
         //
         // POST: /UserProfile/Delete/5
 
+        [Authorize(Roles = "admin")]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            UserProfile userprofile = db.UserProfiles.Find(id);
-            db.UserProfiles.Remove(userprofile);
-            db.SaveChanges();
+            var tmpuser = "";
+            var ctx = new DbEntities();
+            using (ctx)
+            {
+                var firstOrDefault = ctx.UserProfiles.FirstOrDefault(us => us.UserId == id);
+                if (firstOrDefault != null)
+                    tmpuser = firstOrDefault.UserName;
+            }
+
+            string[] allRoles = Roles.GetRolesForUser(tmpuser);
+            Roles.RemoveUserFromRoles(tmpuser, allRoles);
+
+            //Roles.RemoveUserFromRole(tmpuser, "RoleName");
+
+            ((SimpleMembershipProvider)Membership.Provider).DeleteAccount(tmpuser);
+            Membership.Provider.DeleteUser(tmpuser, true);
+            Membership.DeleteUser(tmpuser, true);
+
+            ctx = new DbEntities();
+
             return RedirectToAction("Index");
         }
 
