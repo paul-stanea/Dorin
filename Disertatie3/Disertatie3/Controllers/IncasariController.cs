@@ -7,10 +7,13 @@ using System.Web;
 using System.Web.Mvc;
 using Disertatie3.Models;
 
+// review - the business logic should be separated from the UI.
 namespace Disertatie3.Controllers
 {
+    // review - please use english names
     public class IncasariController : Controller
     {
+        // review - there should be a Domain project in which the data access and rules are included
         private DbEntities db = new DbEntities();
 
         //
@@ -18,6 +21,7 @@ namespace Disertatie3.Controllers
 
         public ActionResult Index()
         {
+            // review - do not use var's
             var incasari = db.Incasari.Include(i => i.UserProfile);
             return View(incasari.ToList());
         }
