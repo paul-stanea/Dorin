@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using CompareAttribute = System.Web.Mvc.CompareAttribute;
 //using System.ComponentModel.DataAnnotations.CompareAttribute;
-
+//review - a file must contain a single class!!!!!!
 namespace Disertatie3.Models
 {
     //public class UsersContext : DbContext
