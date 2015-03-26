@@ -10,6 +10,8 @@ using Disertatie3.Models;
 
 namespace Disertatie3.Models
 {
+    // review - this should not be here. Create a domain project which will have a Data access layer where the 
+    // database connection and querying is done
     public class DbEntities: DbContext 
     {
         public DbSet<UserProfile> UserProfiles { get; set; }
