@@ -6,6 +6,9 @@ using System.Web;
 
 namespace Disertatie3.Models
 {
+    // review - the domain object (the one that is mapped to a database table) should be different from the 
+    // object that we send to the view. The purpose of the model (view Model) should be to prepare the data for the view
+    // or to prepare the data for the domain
     public class Plati
     {
         [Required]
