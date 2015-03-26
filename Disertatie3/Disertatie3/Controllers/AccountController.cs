@@ -11,6 +11,7 @@ using WebMatrix.WebData;
 using Disertatie3.Filters;
 using Disertatie3.Models;
 
+// review - lets focus on the business logic for now, and then handle the login and user roles
 namespace Disertatie3.Controllers
 {
     [Authorize]
